@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+      - docker-ci
 jobs:
   build-push:
     name: build-push
@@ -25,7 +26,7 @@ jobs:
         with:
           context: .
           file: Dockerfile
-          tags: skylenet/ethereum-genesis-generator:latest
+          tags: gnosispm/ethereum-genesis-generator:latest
           push: true
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
