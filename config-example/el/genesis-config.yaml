@@ -12,6 +12,7 @@ deposit_contract_address: "0x4242424242424242424242424242424242424242"
 eth1_genesis_timestamp: 0
 terminal_total_difficulty: 60000000
 mergeForkBlock: 100
+miningAddresses: "0xb0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0"
 
 clique:
   enabled: false
