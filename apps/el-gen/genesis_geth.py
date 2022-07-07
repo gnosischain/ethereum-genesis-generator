@@ -90,6 +90,10 @@ if data["clique"]["enabled"]:
   out["config"]["clique"] = {"period": 15,"epoch": 30000}
   signers = ''.join(str(i) for i in data["clique"]["signers"])
   out["extraData"] = ''.join(["0x", "0" * 64, signers, "0" *130])
+elif data["aura"]["enabled"]:
+  out["config"]["aura"] = { "params": { "period": 4, "epoch": 500 }}
+  authorities = ''.join(str(i) for i in data["aura"]["authorities"])
+  out["config"]["aura"] = ''.join(["0x", "0" * 64, authorities, "0" *130])
 
 for key, value in data['eth1_premine'].items():
     acct = w3.eth.account.from_mnemonic(data['mnemonic'], account_path=key, passphrase='')

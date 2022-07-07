@@ -122,6 +122,11 @@ if data["clique"]["enabled"]:
   signers = ''.join(str(i) for i in data["clique"]["signers"])
   out["genesis"]["extraData"] = ''.join(["0x", "0" * 64, signers, "0" *130])
 
+elif data["aura"]["enabled"]:
+  out["genesis"]["aura"] = { "params": { "period": 4, "epoch": 500 }}
+  authorities = ''.join(str(i) for i in data["aura"]["authorities"])
+  out["config"]["aura"] = ''.join(["0x", "0" * 64, authorities, "0" *130])
+
 else:
     out["engine"]["Ethash"] =  {"params": {"minimumDifficulty": "0x20000","difficultyBoundDivisor": "0x800","durationLimit": "0xd","blockReward": {"0x0": "0x1BC16D674EC80000" },"homesteadTransition": "0x0","eip100bTransition": "0x0","difficultyBombDelays": {} }}
 
