@@ -26,7 +26,8 @@ out = {
         "berlinBlock":0,
         "londonBlock":0,
         "mergeForkBlock":int(data['mergeForkBlock']),
-        "terminalTotalDifficulty":int(data['terminal_total_difficulty'])
+        "terminalTotalDifficulty":int(data['terminal_total_difficulty']),
+        "aura": {}
     },
     "alloc": {
         # Allocate 1 wei to all possible pre-compiles.
